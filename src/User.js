@@ -5,9 +5,16 @@ const User = (props) => {
   const {name, last, pic, gender, email, age, house, street, city, state, country, zip} = props
   const [isHidden, setHide] = useState(true)
 
+  const divStyle = {
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    width: '500px',
+  }
+
   return (
     <div>
-      <div style={{display: 'flex', alignItems: 'flex-start', justifyContent: "space-between", width: '500px'}}>
+      <div style={divStyle}>
         <img style={{height: '70px'}} src={pic} alt='image of user'></img>
         <h4>{name} {last}</h4>
         <button onClick={() => isHidden ? setHide(false) : setHide(true)}>{isHidden ? 'Show Details' : 'Hide Details'}</button>
@@ -24,8 +31,6 @@ const User = (props) => {
           </p>
         </div>}
     </div>
-    
-
   )
 }
 
